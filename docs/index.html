@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quarterly Earnings — Presentation</title>
+
+  <!-- Reveal.js core styles -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.4.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.4.0/dist/theme/black.css" id="theme">
+
+  <!-- Highlight.js theme (used by Reveal's highlight plugin) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+
+  <style>
+    /* Small visual tweaks */
+    .email { font-size: 0.9rem; opacity: 0.9; }
+    .company { font-weight: 700; letter-spacing: 0.02em; }
+    pre code { font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Title slide with email (requirement) -->
+      <section>
+        <h1>Quarterly Earnings Report — Q3</h1>
+        <p class="company">Confidential — For stakeholders</p>
+        <p class="email">Contact: 25f1000038@ds.study.iitm.ac.in</p>
+        <aside class="notes">
+          Speaker note: Introduce yourself, summarize the quarter in one sentence, and point stakeholders to the contact email.
+        </aside>
+      </section>
+
+      <!-- Markdown slide (requirement) -->
+      <section data-markdown>
+        <script type="text/template">
+
+## Executive Summary
+
+- Revenue grew **6.2%** year-over-year.
+- Cost efficiencies improved gross margin by *1.1%*.
+- Net impact from FX and one-time charges: **-0.8%**.
+
+> For detailed breakdown see subsequent slides.
+
+        </script>
+        <aside class="notes">
+          Speaker note: Read the bullets and call out the top-line drivers: revenue growth, margin improvement, and the FX headwind.
+        </aside>
+      </section>
+
+      <!-- Slide with animated fragments (requirement: fragments) -->
+      <section>
+        <h2>Key Drivers</h2>
+        <ul>
+          <li class="fragment">Volume growth in core products</li>
+          <li class="fragment">Price optimisation across portfolios</li>
+          <li class="fragment">Operational cost reduction program</li>
+        </ul>
+        <aside class="notes">
+          Speaker note: Use fragments to reveal each driver one-by-one while narrating causation.
+        </aside>
+      </section>
+
+      <!-- Slide with code sample and syntax highlighting (requirement) -->
+      <section>
+        <h2>Sample Financial Calculation (Python)</h2>
+        <pre><code class="language-python"># Simple NPV calculator for projected cashflows
+def npv(rate, cashflows):
+    return sum(cf / ((1 + rate) ** t) for t, cf in enumerate(cashflows))
+
+cashflows = [-100000, 30000, 40000, 50000, 60000]
+print(f"NPV @ 8%: {npv(0.08, cashflows):,.2f}")
+        </code></pre>
+        <aside class="notes">
+          Speaker note: This slide demonstrates a reproducible snippet for NPV calculation used in our sensitivity analysis.
+        </aside>
+      </section>
+
+      <!-- Mathematical equations (requirement) -->
+      <section>
+        <h2>Key Financial Formulas</h2>
+        <p>Net Present Value (NPV):</p>
+        <p class="fragment">\[\mathrm{NPV} = \sum_{t=0}^{T} \frac{CF_t}{(1+r)^t}\]</p>
+        <p class="fragment">Weighted Average Cost of Capital (WACC):</p>
+        <p class="fragment">\[\mathrm{WACC} = \frac{E}{E+D}r_E + \frac{D}{E+D}r_D(1 - T_c)\]</p>
+        <aside class="notes">
+          Speaker note: Explain components of each formula. Use the NPV example to justify discount rates used.
+        </aside>
+      </section>
+
+      <!-- Slide showing a small interactive example and fragments -->
+      <section>
+        <h2>Scenario Sensitivity</h2>
+        <p>Base case vs stressed case:</p>
+        <ol>
+          <li class="fragment">Base case revenue growth: <strong>6.2%</strong></li>
+          <li class="fragment">Stressed revenue growth: <strong>2.0%</strong></li>
+          <li class="fragment">Impact on EBITDA margin: <strong>-1.5pp</strong></li>
+        </ol>
+        <aside class="notes">
+          Speaker note: Walk through the step-down impact and how contingency plans offset this.</n        </aside>
+      </section>
+
+      <!-- Closing slide -->
+      <section>
+        <h2>Thank you</h2>
+        <p>Questions? Reach out at <span class="email">25f1000038@ds.study.iitm.ac.in</span></p>
+        <aside class="notes">
+          Speaker note: Invite questions and remind stakeholders where to find the full deck and analytics annex.
+        </aside>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- MathJax (for TeX rendering) -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$','$'], ['\\(','\\)'], ['\\[','\\]']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" defer></script>
+
+  <!-- Reveal.js and plugins (ESM) -->
+  <script type="module">
+    import Reveal from 'https://unpkg.com/reveal.js@4.4.0/dist/reveal.esm.js';
+    import Markdown from 'https://unpkg.com/reveal.js@4.4.0/plugin/markdown/markdown.esm.js';
+    import Highlight from 'https://unpkg.com/reveal.js@4.4.0/plugin/highlight/highlight.esm.js';
+    import Notes from 'https://unpkg.com/reveal.js@4.4.0/plugin/notes/notes.esm.js';
+    import Math from 'https://unpkg.com/reveal.js@4.4.0/plugin/math/math.esm.js';
+
+    Reveal.initialize({
+      hash: true,
+      plugins: [ Markdown, Highlight, Notes, Math ],
+      center: true,
+      slideNumber: true,
+      transition: 'fade'
+    });
+  </script>
+
+</body>
+</html>
