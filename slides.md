@@ -4,6 +4,12 @@ theme: custom-theme
 paginate: true
 footer: "© 2025 — Product Documentation | 25f1000038@ds.study.iitm.ac.in"
 ---
+---
+marp: true
+theme: custom-theme
+paginate: true
+footer: "© 2025 — Product Documentation | 25f1000038@ds.study.iitm.ac.in"
+---
 
 <!--
 This is a Marp presentation with:
