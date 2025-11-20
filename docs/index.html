@@ -1,165 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Q4 2024 Earnings Report</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/white.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
-    <style>
-        .email-footer { font-size: 0.8em; color: #666; }
-        .fragment { transition: all 0.5s ease; }
-        .math { background: #f8f9fa; padding: 20px; border-radius: 8px; }
-        .reveal .slides section { text-align: left; }
-        .reveal h1, .reveal h2 { color: #1f4e79; }
-    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/github.min.css">
 </head>
 <body>
 <div class="reveal">
     <div class="slides">
 
-        <!-- Slide 1: Title -->
         <section>
             <h1>Q4 2024 Earnings Report</h1>
-            <h3>Financial Performance & Strategic Outlook</h3>
-            <p class="fragment"><strong>Presented by Technical Consultant Team</strong></p>
-            <p class="fragment email-footer">📧 25f1000038@ds.study.iitm.ac.in</p>
-            <aside class="notes">
-                Welcome stakeholders to Q4 earnings call. Emphasize strong performance despite market challenges.
-            </aside>
+            <h3>Financial Performance Summary</h3>
+            <p class="fragment">Technical Consultant Presentation</p>
+            <p><small>25f1000038@ds.study.iitm.ac.in</small></p>
+            <aside class="notes">Welcome to Q4 earnings. Strong performance across all segments.</aside>
         </section>
 
-        <!-- Slide 2: Markdown Content -->
         <section data-markdown>
             <script type="text/template">
-                ## **Executive Summary**
-                
-                ### Key Highlights Q4 2024:
-                - **Revenue Growth**: +15% YoY
-                - **Net Income**: $2.4B 
-                - **EPS**: $3.12 vs $2.89 expected
-                - **Operating Margin**: 28.5%
-                
-                **Contact**: 25f1000038@ds.study.iitm.ac.in
+                ## Executive Summary
+
+                - **Revenue**: $2.6B (+15% YoY)
+                - **Net Income**: $2.4B
+                - **EPS**: $3.12
+                - **ROE**: 13.2%
+
+                Contact: 25f1000038@ds.study.iitm.ac.in
             </script>
-            <aside class="notes">
-                Read bullet points slowly. Mention this beats analyst expectations.
-            </aside>
+            <aside class="notes">Key metrics beat analyst expectations</aside>
         </section>
 
-        <!-- Slide 3: Financial Formulas -->
         <section>
             <h2>Profitability Analysis</h2>
-            <div class="math">
-                <h3>Return on Equity (ROE)</h3>
-                $$ROE = \frac{\text{Net Income}}{\text{Shareholder Equity}} = \frac{2.4B}{18.2B} = 13.2\%$$
-                
-                <h3 class="fragment">Earnings Per Share (EPS)</h3>
-                <p class="fragment">$$EPS = \frac{\text{Net Income} - \text{Preferred Dividends}}{\text{Weighted Avg Shares}} = \frac{2.4B}{768M} = 3.12$$</p>
+            <div class="fragment">
+                <h3>Return on Equity</h3>
+                $$ROE = \frac{2.4B}{18.2B} = 13.2\%$$
             </div>
-            <aside class="notes">
-                Explain ROE calculation. Emphasize 13.2% is above industry average.
-            </aside>
+            <div class="fragment">
+                <h3>Earnings Per Share</h3>
+                $$EPS = \frac{2.4B}{768M} = 3.12$$
+            </div>
+            <aside class="notes">ROE above industry average</aside>
         </section>
 
-        <!-- Slide 4: Revenue Breakdown -->
         <section>
-            <h2>Revenue by Segment</h2>
+            <h2>Revenue Breakdown</h2>
             <ul>
-                <li class="fragment">**Investment Banking**: $1.2B <span class="fragment">(+22%)</span></li>
-                <li class="fragment">**Wealth Management**: $0.8B <span class="fragment">(+18%)</span></li>
-                <li class="fragment">**Retail Banking**: $0.6B <span class="fragment">(+8%)</span></li>
-                <li class="fragment">**Total**: $2.6B <span class="fragment">(+15%)</span></li>
+                <li class="fragment">Investment Banking: $1.2B</li>
+                <li class="fragment">Wealth Management: $0.8B</li>
+                <li class="fragment">Retail Banking: $0.6B</li>
             </ul>
-            <aside class="notes">
-                Highlight investment banking growth. Mention wealth management momentum.
-            </aside>
+            <aside class="notes">Strong growth across all segments</aside>
         </section>
 
-        <!-- Slide 5: Code Sample -->
         <section>
-            <h2>Risk Calculation Model</h2>
-            <pre><code class="hljs python"># Value at Risk (VaR) calculation
-import numpy as np
-
-def calculate_var(portfolio_value, confidence_level=0.05):
+            <h2>Risk Model</h2>
+            <pre><code class="python">def calculate_var(portfolio, confidence=0.05):
     returns = np.array([0.02, -0.01, 0.03, -0.02, 0.01])
-    mean_return = np.mean(returns)
-    std_return = np.std(returns)
-    
-    # Parametric VaR
-    var_95 = portfolio_value * (mean_return - 1.645 * std_return)
-    return abs(var_95)
-
-portfolio = 1000000000  # $1B portfolio
-daily_var = calculate_var(portfolio)
-print(f"Daily VaR: ${daily_var:,.0f}")</code></pre>
-            <aside class="notes">
-                Explain risk model. Daily VaR is $32.9M at 95% confidence.
-            </aside>
+    mean = np.mean(returns)
+    std = np.std(returns)
+    var = portfolio * abs(mean - 1.645 * std)
+    return var</code></pre>
+            <aside class="notes">Daily VaR: $32.9M at 95% confidence</aside>
         </section>
 
-        <!-- Slide 6: Market Outlook -->
-        <section>
-            <h2>2025 Market Outlook</h2>
-            <div class="fragment">
-                <h3>Growth Projections</h3>
-                <p>Expected revenue growth: <strong>12-15%</strong></p>
-            </div>
-            <div class="fragment">
-                <h3>Key Drivers</h3>
-                <ul>
-                    <li>Interest rate normalization</li>
-                    <li>Digital transformation</li>
-                    <li>Wealth management expansion</li>
-                </ul>
-            </div>
-            <aside class="notes">
-                Conservative but optimistic outlook. Mention Fed policy impact.
-            </aside>
-        </section>
-
-        <!-- Slide 7: Financial Metrics -->
-        <section>
-            <h2>Key Financial Ratios</h2>
-            <table>
-                <tr><th>Metric</th><th>Q4 2024</th><th>Q4 2023</th></tr>
-                <tr class="fragment"><td>ROA</td><td>1.2%</td><td>1.0%</td></tr>
-                <tr class="fragment"><td>ROE</td><td>13.2%</td><td>11.8%</td></tr>
-                <tr class="fragment"><td>Efficiency Ratio</td><td>58%</td><td>62%</td></tr>
-            </table>
-            <aside class="notes">
-                Highlight improved efficiency ratio. All metrics trending positive.
-            </aside>
-        </section>
-
-        <!-- Slide 8: Thank You -->
         <section>
             <h1>Thank You</h1>
-            <h3>Q&A Session</h3>
-            <p class="fragment">📧 Contact: 25f1000038@ds.study.iitm.ac.in</p>
-            <p class="fragment">📱 Investor Relations: (555) 123-4567</p>
-            <aside class="notes">
-                Open floor for questions. Reference detailed financials in appendix.
-            </aside>
+            <p>Questions?</p>
+            <p><strong>25f1000038@ds.study.iitm.ac.in</strong></p>
+            <aside class="notes">Open floor for Q&A</aside>
         </section>
 
     </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/markdown/markdown.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/highlight.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/math/math.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/math/math.min.js"></script>
 
 <script>
     Reveal.initialize({
         hash: true,
         plugins: [RevealMarkdown, RevealHighlight, RevealMath],
-        transition: 'slide',
-        transitionSpeed: 'default',
-        backgroundTransition: 'fade'
+        transition: 'slide'
     });
 </script>
 </body>
