@@ -1,149 +1,166 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quarterly Earnings — Presentation</title>
-
-  <!-- Reveal.js core styles -->
-  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.4.0/dist/reveal.css">
-  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.4.0/dist/theme/black.css" id="theme">
-
-  <!-- Highlight.js theme (used by Reveal's highlight plugin) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
-
-  <style>
-    /* Small visual tweaks */
-    .email { font-size: 0.9rem; opacity: 0.9; }
-    .company { font-weight: 700; letter-spacing: 0.02em; }
-    pre code { font-size: 0.9rem; }
-  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q4 2024 Earnings Report</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/white.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
+    <style>
+        .email-footer { font-size: 0.8em; color: #666; }
+        .fragment { transition: all 0.5s ease; }
+        .math { background: #f8f9fa; padding: 20px; border-radius: 8px; }
+        .reveal .slides section { text-align: left; }
+        .reveal h1, .reveal h2 { color: #1f4e79; }
+    </style>
 </head>
 <body>
-
-  <div class="reveal">
+<div class="reveal">
     <div class="slides">
 
-      <!-- Title slide with email (requirement) -->
-      <section>
-        <h1>Quarterly Earnings Report — Q3</h1>
-        <p class="email">Contact: 25f1000038@ds.study.iitm.ac.in</p>
+        <!-- Slide 1: Title -->
+        <section>
+            <h1>Q4 2024 Earnings Report</h1>
+            <h3>Financial Performance & Strategic Outlook</h3>
+            <p class="fragment"><strong>Presented by Technical Consultant Team</strong></p>
+            <p class="fragment email-footer">📧 25f1000038@ds.study.iitm.ac.in</p>
+            <aside class="notes">
+                Welcome stakeholders to Q4 earnings call. Emphasize strong performance despite market challenges.
+            </aside>
+        </section>
 
-        <p class="company">Confidential — For stakeholders</p>
-        <p class="email">Contact: 25f1000038@ds.study.iitm.ac.in</p>
-        <aside class="notes">
-          Speaker note: Introduce yourself, summarize the quarter in one sentence, and point stakeholders to the contact email.
-        </aside>
-      </section>
+        <!-- Slide 2: Markdown Content -->
+        <section data-markdown>
+            <script type="text/template">
+                ## **Executive Summary**
+                
+                ### Key Highlights Q4 2024:
+                - **Revenue Growth**: +15% YoY
+                - **Net Income**: $2.4B 
+                - **EPS**: $3.12 vs $2.89 expected
+                - **Operating Margin**: 28.5%
+                
+                **Contact**: 25f1000038@ds.study.iitm.ac.in
+            </script>
+            <aside class="notes">
+                Read bullet points slowly. Mention this beats analyst expectations.
+            </aside>
+        </section>
 
-      <!-- Markdown slide (requirement) -->
-      <section data-markdown>
-        <script type="text/template">
+        <!-- Slide 3: Financial Formulas -->
+        <section>
+            <h2>Profitability Analysis</h2>
+            <div class="math">
+                <h3>Return on Equity (ROE)</h3>
+                $$ROE = \frac{\text{Net Income}}{\text{Shareholder Equity}} = \frac{2.4B}{18.2B} = 13.2\%$$
+                
+                <h3 class="fragment">Earnings Per Share (EPS)</h3>
+                <p class="fragment">$$EPS = \frac{\text{Net Income} - \text{Preferred Dividends}}{\text{Weighted Avg Shares}} = \frac{2.4B}{768M} = 3.12$$</p>
+            </div>
+            <aside class="notes">
+                Explain ROE calculation. Emphasize 13.2% is above industry average.
+            </aside>
+        </section>
 
-## Executive Summary
+        <!-- Slide 4: Revenue Breakdown -->
+        <section>
+            <h2>Revenue by Segment</h2>
+            <ul>
+                <li class="fragment">**Investment Banking**: $1.2B <span class="fragment">(+22%)</span></li>
+                <li class="fragment">**Wealth Management**: $0.8B <span class="fragment">(+18%)</span></li>
+                <li class="fragment">**Retail Banking**: $0.6B <span class="fragment">(+8%)</span></li>
+                <li class="fragment">**Total**: $2.6B <span class="fragment">(+15%)</span></li>
+            </ul>
+            <aside class="notes">
+                Highlight investment banking growth. Mention wealth management momentum.
+            </aside>
+        </section>
 
-- Revenue grew **6.2%** year-over-year.
-- Cost efficiencies improved gross margin by *1.1%*.
-- Net impact from FX and one-time charges: **-0.8%**.
+        <!-- Slide 5: Code Sample -->
+        <section>
+            <h2>Risk Calculation Model</h2>
+            <pre><code class="hljs python"># Value at Risk (VaR) calculation
+import numpy as np
 
-> For detailed breakdown see subsequent slides.
+def calculate_var(portfolio_value, confidence_level=0.05):
+    returns = np.array([0.02, -0.01, 0.03, -0.02, 0.01])
+    mean_return = np.mean(returns)
+    std_return = np.std(returns)
+    
+    # Parametric VaR
+    var_95 = portfolio_value * (mean_return - 1.645 * std_return)
+    return abs(var_95)
 
-        </script>
-        <aside class="notes">
-          Speaker note: Read the bullets and call out the top-line drivers: revenue growth, margin improvement, and the FX headwind.
-        </aside>
-      </section>
+portfolio = 1000000000  # $1B portfolio
+daily_var = calculate_var(portfolio)
+print(f"Daily VaR: ${daily_var:,.0f}")</code></pre>
+            <aside class="notes">
+                Explain risk model. Daily VaR is $32.9M at 95% confidence.
+            </aside>
+        </section>
 
-      <!-- Slide with animated fragments (requirement: fragments) -->
-      <section>
-        <h2>Key Drivers</h2>
-        <ul>
-          <li class="fragment">Volume growth in core products</li>
-          <li class="fragment">Price optimisation across portfolios</li>
-          <li class="fragment">Operational cost reduction program</li>
-        </ul>
-        <aside class="notes">
-          Speaker note: Use fragments to reveal each driver one-by-one while narrating causation.
-        </aside>
-      </section>
+        <!-- Slide 6: Market Outlook -->
+        <section>
+            <h2>2025 Market Outlook</h2>
+            <div class="fragment">
+                <h3>Growth Projections</h3>
+                <p>Expected revenue growth: <strong>12-15%</strong></p>
+            </div>
+            <div class="fragment">
+                <h3>Key Drivers</h3>
+                <ul>
+                    <li>Interest rate normalization</li>
+                    <li>Digital transformation</li>
+                    <li>Wealth management expansion</li>
+                </ul>
+            </div>
+            <aside class="notes">
+                Conservative but optimistic outlook. Mention Fed policy impact.
+            </aside>
+        </section>
 
-      <!-- Slide with code sample and syntax highlighting (requirement) -->
-      <section>
-        <h2>Sample Financial Calculation (Python)</h2>
-        <pre><code class="language-python"># Simple NPV calculator for projected cashflows
-def npv(rate, cashflows):
-    return sum(cf / ((1 + rate) ** t) for t, cf in enumerate(cashflows))
+        <!-- Slide 7: Financial Metrics -->
+        <section>
+            <h2>Key Financial Ratios</h2>
+            <table>
+                <tr><th>Metric</th><th>Q4 2024</th><th>Q4 2023</th></tr>
+                <tr class="fragment"><td>ROA</td><td>1.2%</td><td>1.0%</td></tr>
+                <tr class="fragment"><td>ROE</td><td>13.2%</td><td>11.8%</td></tr>
+                <tr class="fragment"><td>Efficiency Ratio</td><td>58%</td><td>62%</td></tr>
+            </table>
+            <aside class="notes">
+                Highlight improved efficiency ratio. All metrics trending positive.
+            </aside>
+        </section>
 
-cashflows = [-100000, 30000, 40000, 50000, 60000]
-print(f"NPV @ 8%: {npv(0.08, cashflows):,.2f}")
-        </code></pre>
-        <aside class="notes">
-          Speaker note: This slide demonstrates a reproducible snippet for NPV calculation used in our sensitivity analysis.
-        </aside>
-      </section>
-
-      <!-- Mathematical equations (requirement) -->
-      <section>
-        <h2>Key Financial Formulas</h2>
-        <p>Net Present Value (NPV):</p>
-        <p class="fragment">\[\mathrm{NPV} = \sum_{t=0}^{T} \frac{CF_t}{(1+r)^t}\]</p>
-        <p class="fragment">Weighted Average Cost of Capital (WACC):</p>
-        <p class="fragment">\[\mathrm{WACC} = \frac{E}{E+D}r_E + \frac{D}{E+D}r_D(1 - T_c)\]</p>
-        <aside class="notes">
-          Speaker note: Explain components of each formula. Use the NPV example to justify discount rates used.
-        </aside>
-      </section>
-
-      <!-- Slide showing a small interactive example and fragments -->
-      <section>
-        <h2>Scenario Sensitivity</h2>
-        <p>Base case vs stressed case:</p>
-        <ol>
-          <li class="fragment">Base case revenue growth: <strong>6.2%</strong></li>
-          <li class="fragment">Stressed revenue growth: <strong>2.0%</strong></li>
-          <li class="fragment">Impact on EBITDA margin: <strong>-1.5pp</strong></li>
-        </ol>
-        <aside class="notes">
-          Speaker note: Walk through the step-down impact and how contingency plans offset this.</n        </aside>
-      </section>
-
-      <!-- Closing slide -->
-      <section>
-        <h2>Thank you</h2>
-        <p>Questions? Reach out at <span class="email">25f1000038@ds.study.iitm.ac.in</span></p>
-        <aside class="notes">
-          Speaker note: Invite questions and remind stakeholders where to find the full deck and analytics annex.
-        </aside>
-      </section>
+        <!-- Slide 8: Thank You -->
+        <section>
+            <h1>Thank You</h1>
+            <h3>Q&A Session</h3>
+            <p class="fragment">📧 Contact: 25f1000038@ds.study.iitm.ac.in</p>
+            <p class="fragment">📱 Investor Relations: (555) 123-4567</p>
+            <aside class="notes">
+                Open floor for questions. Reference detailed financials in appendix.
+            </aside>
+        </section>
 
     </div>
-  </div>
+</div>
 
-  <!-- MathJax (for TeX rendering) -->
-  <script>
-    window.MathJax = {
-      tex: { inlineMath: [['$','$'], ['\\(','\\)'], ['\\[','\\]']] },
-      svg: { fontCache: 'global' }
-    };
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/markdown/markdown.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/math/math.min.js"></script>
 
-  <!-- Reveal.js and plugins (ESM) -->
-  <script type="module">
-    import Reveal from 'https://unpkg.com/reveal.js@4.4.0/dist/reveal.esm.js';
-    import Markdown from 'https://unpkg.com/reveal.js@4.4.0/plugin/markdown/markdown.esm.js';
-    import Highlight from 'https://unpkg.com/reveal.js@4.4.0/plugin/highlight/highlight.esm.js';
-    import Notes from 'https://unpkg.com/reveal.js@4.4.0/plugin/notes/notes.esm.js';
-    import Math from 'https://unpkg.com/reveal.js@4.4.0/plugin/math/math.esm.js';
-
+<script>
     Reveal.initialize({
-      hash: true,
-      plugins: [ Markdown, Highlight, Notes, Math ],
-      center: true,
-      slideNumber: true,
-      transition: 'fade'
+        hash: true,
+        plugins: [RevealMarkdown, RevealHighlight, RevealMath],
+        transition: 'slide',
+        transitionSpeed: 'default',
+        backgroundTransition: 'fade'
     });
-  </script>
-
+</script>
 </body>
 </html>
