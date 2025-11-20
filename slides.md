@@ -1,121 +1,102 @@
 ---
 marp: true
-theme: custom
+theme: custom-tech-docs
 paginate: true
-footer: "© 2025 — Product Documentation | 25f1000038@ds.study.iitm.ac.in"
+size: 16:9
+title: Product Documentation - Advanced Analytics Platform
+author: Technical Writer Team
+date: 2025-01-21
+footer: "25f1000038@ds.study.iitm.ac.in | Confidential Documentation"
+backgroundImage: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1920&h=1080&fit=crop')
+backgroundSize: cover
+style: |
+  section {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2c3e50;
+  }
+  h1, h2, h3 {
+    color: #34495e;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+  }
+  .highlight-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+  }
+  .code-block {
+    background: #2d3748;
+    color: #e2e8f0;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+  }
+  .math-formula {
+    background: rgba(52, 152, 219, 0.1);
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 4px solid #3498db;
+  }
 ---
 
-<!--
-  Marp presentation: custom theme embedded below.
-  The "theme: custom" in front-matter corresponds to the CSS theme comment.
--->
+&lt;!-- _class: lead --&gt;
+# **Advanced Analytics Platform**
+## Product Documentation
 
-<style>
-/* theme: custom */
-/* Basic custom theme variables */
-section {
-  font-family: "Inter", -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  color: #eaeef6;
-  background-color: #0f1724;
-}
-/* Header styling */
-h1, h2, h3 {
-  color: #00b7ff;
-  text-shadow: 0 1px 0 rgba(0,0,0,0.6);
-}
-/* Footer / page number styling */
-.marp-footer {
-  font-size: 0.8rem;
-  opacity: 0.9;
-}
-/* Slide content max width for readability */
-section .content {
-  max-width: 900px;
-  margin: 0 auto;
-  line-height: 1.45;
-}
-/* Special accent for code blocks */
-pre {
-  border-radius: 8px;
-  padding: 1rem;
-  background: rgba(255,255,255,0.04);
-  overflow: auto;
-}
+**Technical Writer Team**  
+📧 25f1000038@ds.study.iitm.ac.in  
+🗓️ January 2025
 
-/* Background-image slide tweaks */
-.background-slide {
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-}
-
-/* Small util */
-.meta {
-  font-size: 0.9rem;
-  opacity: 0.85;
-}
-</style>
-
-<!-- Title slide -->
-# Product Documentation  
-### Technical Writer Presentation  
-**Contact:** 25f1000038@ds.study.iitm.ac.in
-
-<div class="meta">Version: 1.0 • Maintained in Git</div>
+![bg right:40% 80%](https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop)
 
 ---
 
-# Overview
+## Table of Contents
 
-<div class="content">
+1. **Introduction**
+2. **Architecture Overview**
+3. **Algorithmic Complexity**
+4. **Installation & Setup**
+5. **Core Features**
+6. **Performance Metrics**
+7. **Troubleshooting**
+8. **Best Practices**
+9. **Conclusion**
 
-- Product architecture  
-- Key components  
-- Installation  
-- API usage examples  
-- Complexity & performance analysis
-
-</div>
-
----
-
-<!-- Background image slide (uses a public image) -->
-<!-- Marp will render the image as background if using the full-width ![bg](url) pattern -->
-![bg](https://images.unsplash.com/photo-1518770660439-4636190af475)
-class: background-slide
-
-# System Architecture
-
-- Frontend (SPA)  
-- Backend (microservices)  
-- Database (managed SQL + cache)  
-- Messaging Layer (event streaming)
+![bg left:30%](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=800&fit=crop)
 
 ---
 
-# Algorithmic Complexity
+## 1. Introduction
 
-Consider the algorithm used in the processing pipeline:
+&lt;div class="highlight-box"&gt;
 
-\[
-T(n) = 3n^2 + 2n + 5 \implies O(n^2)
-\]
+**What is Advanced Analytics Platform?**
 
-For the optimized path:
+A comprehensive solution for real-time data processing, machine learning, and business intelligence.
 
-\[
-T(n) = n \log n + n \implies O(n \log n)
-\]
+&lt;/div&gt;
 
-(Use these Big-O forms when selecting scaling strategies.)
+### Key Benefits:
+- **Scalability**: Handle millions of events per second
+- **Real-time Processing**: Sub-millisecond latency
+- **Machine Learning**: Built-in ML pipelines
+- **Cost Effective**: 70% reduction in infrastructure costs
+
+![bg right:45% opacity:0.3](https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=1200&h=800&fit=crop)
 
 ---
 
-# Code Example (CLI)
+## 2. Architecture Overview
 
-```bash
-curl -X POST https://api.example.com/v1/analyze \
-  -H "Authorization: Bearer <token>" \
-  -d '{"query":"sample input","limit":10}'
+### System Components
 
+```mermaid
+graph TD
+    A[Data Ingestion] --&gt; B[Processing Engine]
+    B --&gt; C[ML Models]
+    C --&gt; D[Analytics Dashboard]
+    B --&gt; E[Storage Layer]
+    E --&gt; D
